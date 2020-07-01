@@ -1,0 +1,3 @@
+apiVersion: v2
+name: required-example
+version: 1.0.0

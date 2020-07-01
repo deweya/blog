@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ required "Name of ConfigMap is required" .Values.configName }}
+data:
+  file0: |
+    Learning how to use the required function!

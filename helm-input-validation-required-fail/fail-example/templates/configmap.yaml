@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ required "Name of ConfigMap is required" .Values.configName }}
+data:
+  file0: |
+    Learning how to use the {{ required "Function type required" .Values.functionType }} function!
+{{- $valid := list "fail" "required" }}
+{{- if not (has .Values.functionType $valid) }}
+{{- fail "Invalid function type" }}
+{{- end }}
