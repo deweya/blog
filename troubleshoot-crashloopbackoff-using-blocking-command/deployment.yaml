@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wildfly-test
+  namespace: test-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wildfly-test
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: wildfly-test
+    spec:
+      containers:
+        - image: docker.io/jboss/wildfly:20.0.0.Final
+          name: wildfly
+          command: ["sleep", "infinity"]
