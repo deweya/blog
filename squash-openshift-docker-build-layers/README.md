@@ -1,0 +1,1 @@
+Notice that the [buildconfig.yaml](./buildconfig.yaml) file uses the `imageOptimizationPolicy` setting to squash layers. Read [my post about imageOptimizationPolicy](https://austindewey.com/2020/06/26/how-to-squash-openshift-docker-build-layers-to-remove-secrets/) to learn more about how this setting works.

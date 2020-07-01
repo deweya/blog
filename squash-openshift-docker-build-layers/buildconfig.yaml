@@ -1,0 +1,23 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: example-image
+spec:
+  output:
+    to:
+      kind: ImageStream
+      name: example-image
+  source:
+    binary: {}
+    type: Binary
+    secrets:
+      - destinationDir: nexus-creds
+        secret:
+          name: nexus-creds
+  strategy:
+    dockerStrategy:
+      imageOptimizationPolicy: SkipLayers
+      pullSecret:
+        name: pull-secret
+      dockerfilePath: Dockerfile
+    type: Docker
