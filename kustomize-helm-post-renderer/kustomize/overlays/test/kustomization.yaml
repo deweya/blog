@@ -1,0 +1,4 @@
+bases:
+  - ../../base
+patches:
+  - test_env.yaml
