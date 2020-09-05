@@ -1,0 +1,3 @@
+[submodule "auto-refreshing-spring-connection-pools-on-kubernetes-with-vault"]
+	path = auto-refreshing-spring-connection-pools-on-kubernetes-with-vault
+	url = git@github.com:deweya/postgres-vault-example.git
