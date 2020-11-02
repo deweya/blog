@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubi8
+  annotations:
+    image.openshift.io/triggers: |-
+      [
+        {
+          "from": {
+            "kind": "ImageStreamTag",
+            "name": "jenkins-agent-helm:latest"
+          },
+          "fieldPath": "spec.template.spec.containers[0].image"
+        }
+      ]
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubi8
+  template:
+    metadata:
+      labels:
+        app: ubi8
+    spec:
+      containers:
+        - name: ubi8
+          image: jenkins-agent-helm:latest
+          command:
+            - sleep
+            - infinity
